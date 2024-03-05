@@ -12,8 +12,8 @@
                     </h1>
 
                     <form action="{{ route('admin.projects.store') }}" method="POST">
+                        @method('PUT')
                         @csrf
-                        
 
                         
                         <label for="title" class="form-label">Nome Progetto</label>
