@@ -12,6 +12,9 @@
                     </h1>
 
                     <div>
+                        <a href="{{ route('admin.projects.create') }}" class="btn btn btn-success">
+                            Aggiungi
+                        </a>
                         <table class="table">
                             <thead>
                                 <tr>
