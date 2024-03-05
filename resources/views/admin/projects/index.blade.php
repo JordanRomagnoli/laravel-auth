@@ -12,7 +12,7 @@
                     </h1>
 
                     <div>
-                        <a href="{{ route('admin.projects.create') }}" class="btn btn btn-success">
+                        <a href="{{ route('admin.projects.create') }}" class="btn btn btn-success w-100">
                             Aggiungi
                         </a>
                         <table class="table">
