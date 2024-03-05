@@ -62,8 +62,11 @@ class ProjectController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Project $project)
+    public function edit( string $slug)
     {
+
+        $project = Project::where('slug', $slug)->firstOrFail();
+
         return view('admin.projects.edit', compact('project'));
     }
 
@@ -77,7 +80,7 @@ class ProjectController extends Controller
 
         $validatedProjectData['slug'] = Str::slug($validatedProjectData['title']);
 
-        $project = Project::create($validatedProjectData);
+        $project->update($validatedProjectData);
 
         return redirect()->route('admin.projects.show',['project'=>$project->slug]);
     }
