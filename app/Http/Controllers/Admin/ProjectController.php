@@ -6,8 +6,10 @@ use App\Models\Project;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+
 // Form Request
 use App\Http\Requests\StoreProjectRequest;
+use App\Http\Requests\UpdateProjectRequest;
 
 // Helper
 use Illuminate\Support\Str;
@@ -62,15 +64,22 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        //
+        return view('admin.projects.edit', compact('project'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Project $project)
+    public function update(UpdateProjectRequest $request, Project $project)
     {
-        //
+        $validatedProjectData = $request->validated();
+
+
+        $validatedProjectData['slug'] = Str::slug($validatedProjectData['title']);
+
+        $project = Project::create($validatedProjectData);
+
+        return redirect()->route('admin.projects.show',['project'=>$project->slug]);
     }
 
     /**
