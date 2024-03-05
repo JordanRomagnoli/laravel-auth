@@ -6,6 +6,11 @@ use App\Models\Project;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+// Form Request
+use App\Http\Requests\StoreProjectRequest;
+
+// Helper
+use Illuminate\Support\Str;
 
 class ProjectController extends Controller
 {
@@ -24,15 +29,22 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.projects.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreProjectRequest $request)
     {
-        //
+        $validatedProjectData = $request->validated();
+
+
+        $validatedProjectData['slug'] = Str::slug($validatedProjectData['title']);
+
+        $project = Project::create($validatedProjectData);
+
+        return redirect()->route('admin.projects.show', ['project' => $project->slug]);
     }
 
     /**
