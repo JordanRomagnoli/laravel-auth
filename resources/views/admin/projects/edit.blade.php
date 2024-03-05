@@ -11,15 +11,10 @@
                         modifica Progetto
                     </h1>
 
-<<<<<<< HEAD
-                    <form action="{{ route('admin.projects.store') }}" method="POST">
-                        @method('PUT')
-=======
                     <form action="{{ route('admin.projects.update',['project' => $project->slug])  }}" method="POST">
                         
                         @method('PUT')
 
->>>>>>> 020006badcd92e1d451cd31566090baf293b9dd7
                         @csrf
 
                         <label for="title" class="form-label">Nome Progetto</label>
