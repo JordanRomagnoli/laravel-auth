@@ -62,7 +62,7 @@ class ProjectController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit( string $slug)
+    public function edit(string $slug)
     {
 
         $project = Project::where('slug', $slug)->firstOrFail();
@@ -73,10 +73,11 @@ class ProjectController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateProjectRequest $request, Project $project)
+    public function update(UpdateProjectRequest $request, string $slug)
     {
         $validatedProjectData = $request->validated();
 
+        $project = Project::where('slug', $slug)->firstOrFail();
 
         $validatedProjectData['slug'] = Str::slug($validatedProjectData['title']);
 

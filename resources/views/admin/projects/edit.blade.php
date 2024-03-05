@@ -11,11 +11,12 @@
                         modifica Progetto
                     </h1>
 
-                    <form action="{{ route('admin.projects.store') }}" method="POST">
-                        @csrf
+                    <form action="{{ route('admin.projects.update',['project' => $project->slug])  }}" method="POST">
                         
+                        @method('PUT')
 
-                        
+                        @csrf
+
                         <label for="title" class="form-label">Nome Progetto</label>
                         <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title" placeholder="Inserisci il nome del nuovo progetto"
                             maxlength="1024" value="{{$project->title, old('title') }}">
