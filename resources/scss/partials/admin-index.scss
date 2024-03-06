@@ -1,21 +1,28 @@
 #index-admin {
     background-color: #F2F2F2;
 
-    .add-button {
-        background-color: rgb(4, 176, 4);
-        color: white;
-        text-decoration: none;
-        font-size: 24px;
-        text-align: center;
-        line-height: 50px;
-        padding: 8px 16px;
-        border-radius: 5px;
-    }
+   #add {
+    margin-bottom: 50px;
+    text-align: end;
 
-    .add-button:hover {
-        background-color: rgb(0, 91, 0);
-        transition: background-color 0.5s ;
-    }
+        .add-button {
+            background-color: rgb(4, 176, 4);
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+            text-align: center;
+            line-height: 50px;
+            padding: 8px 16px;
+            border-radius: 5px;
+        }
+
+        .add-button:hover {
+            background-color: rgb(0, 91, 0);
+            transition: background-color 0.5s ;
+        }
+   } 
+
+
     .my-card {
         background-color: white;
         border: 1px solid black;

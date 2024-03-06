@@ -4,7 +4,7 @@
 
 @section('main-content')
     <section id="index-admin">
-        <div>
+        <div id="add">
             <a href="{{ route('admin.projects.create') }}" class="add-button mb-5">
                 <span>Aggiungi</span>
                 <i class="fa-solid fa-plus"></i>
@@ -14,7 +14,7 @@
         <div class="row">
             @foreach ($projects as $project)
                 <div class="col-12 col-xs-6 col-sm-4 col-md-3 mb-3">
-                    <div class="my-card">
+                    <div class="my-card m-1">
                         <div class="my-card-body d-flex flex-column justify-content-between h-100">
                             <h3 class="text-center">
                                 {{ $project->title }}
