@@ -8,13 +8,10 @@
             <div class="card">
                 <div class="card-body">
                     <h1 class="text-center text-success">
-                        Tutti i progetti
+                        I nostri progetti
                     </h1>
 
                     <div>
-                        <a href="{{ route('admin.projects.create') }}" class="btn btn btn-success w-100">
-                            Aggiungi
-                        </a>
                         <table class="table">
                             <thead>
                                 <tr>
@@ -34,27 +31,10 @@
                                         <td>{{ $project->content }}</td>
                                         <td>{{ $project->status }}</td>
                                         <td>
-                                            <a href="{{ route('admin.projects.show', ['project' => $project->slug]) }}" class="btn btn-xs btn-primary mb-2">
+                                            <a href="{{ route('projects.show', ['project' => $project->slug]) }}" class="btn btn-xs btn-primary mb-2">
                                                 Mostra
                                             </a>
-                                            <a href="{{ route('admin.projects.edit', ['project' => $project->slug]) }}" class="btn btn-warning mb-2">
-                                                Modifica
-                                            </a>
-
-                                            <form
-                                            onsubmit="return confirm('Sicuro di voler eliminare questo elemento ? ...')"
-                                            action="{{ route('admin.projects.destroy', ['project' => $project->slug]) }}"
-                                            method="POST"
-                                            class="d-inline-block">
-
-                                            @csrf
-                                            @method('DELETE')
-
-                                            <button type="submit" class="btn btn-danger">
-                                                Elimina
-                                            </button>
                                             
-                                            </form>
                                         </td>
                                     </tr>
                                 @endforeach
