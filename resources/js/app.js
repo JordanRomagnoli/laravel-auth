@@ -2,7 +2,6 @@ import './bootstrap';
 
 import '~resources/scss/app.scss';
 import '~resources/scss/partials/header.scss';
-import '~resources/scss/partials/guest-show.scss';
 import '~resources/scss/partials/admin-index.scss';
 import '~resources/scss/partials/welcome.scss';
 

@@ -1,15 +1,19 @@
-#admin-show {
+#admin-show, #show-guest{
     .my-card {
 
+        width: 300px;
         max-width: 1200px;
-        border: 1px solid black;
-        padding: 24px;
-        border-radius: 10px;
-        box-shadow: 7px -7px 4px 0px #8c8c8c;
-            .my-card-body {
+        background-color: white;
+        border-radius: 20px;
+        padding: 12px;
+        height: 350px;
+        box-shadow: 0px 8px 15px 0px #00000090;
+
+            .my-show-card-body {
                 span {
                     margin-left: 5px;
                 }
             }
     }
 }
+
