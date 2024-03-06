@@ -13,47 +13,42 @@
     <body>
         
         <header>
-            <nav class="navbar navbar-expand-lg bg-body-tertiary">
-                <div class="container">
-                    <a class="navbar-brand" href="/">Home</a>
-                    <a class="navbar-brand" href="{{ route('projects.index') }}">I nostri progetti</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarText">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            @auth
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('dashboard') }}">Dashboard</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Link 2</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Link 3</a>
-                                </li>
-                            @else
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">Login</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">Register</a>
-                                </li>
-                            @endauth
-                        </ul>
+            <div class="container">
+                
+            <nav>
+                <ul class="">
+                    <li>
+                        <a href="/">Home</a>
+                        <a href="{{ route('projects.index') }}">I nostri progetti</a>
 
                         @auth
-                            <form method="POST" action="{{ route('logout') }}">
-                                @csrf
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('admin.dashboard') }}">Dashboard</a>
+                            </li>
+                        @else
+                            <li>
 
-                                <button type="submit" class="btn btn-outline-danger">
-                                    Log Out
-                                </button>
-                            </form>
+                                <a href="{{ route('login') }}">Login</a>
+                                <a href="{{ route('register') }}">Register</a>
+
+                            </li>
                         @endauth
-                    </div>
-                </div>
+                    </li>
+                </ul>
+
+                @auth
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+
+                        <button type="submit" class="">
+                            Log Out
+                        </button>
+                    </form>
+                @endauth
+                
+                
             </nav>
+            </div>
         </header>
 
         <section id="guest">        
