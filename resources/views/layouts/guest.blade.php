@@ -19,7 +19,6 @@
                 <ul class="">
                     <li>
                         <a href="/">Home</a>
-                        <a href="{{ route('projects.index') }}">I nostri progetti</a>
 
                         @auth
                             <li class="nav-item">
@@ -28,6 +27,7 @@
                         @else
                             <li>
 
+                                <a href="{{ route('projects.index') }}">I nostri progetti</a>
                                 <a href="{{ route('login') }}">Login</a>
                                 <a href="{{ route('register') }}">Register</a>
 
