@@ -3,6 +3,7 @@
 @section('page-title', $project->title)
 
 @section('main-content')
+<section id="admin-show">
     <div class="row">
         <div class="col">
             <div class="card">
@@ -22,4 +23,5 @@
             </div>
         </div>
     </div>
+</section>
 @endsection
