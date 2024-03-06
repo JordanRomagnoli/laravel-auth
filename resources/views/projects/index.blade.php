@@ -18,7 +18,7 @@
                                     {{ $project->content }}
                                 </p>
     
-                                <a href="{{ route('admin.projects.show', ['project' => $project->slug]) }}" class="show-button align-self-baseline">
+                                <a href="{{ route('projects.show', ['project' => $project->slug]) }}" class="show-button align-self-baseline">
                                     Mostra
                                 </a>
     
