@@ -6,62 +6,53 @@
 <section id="index-admin">
     <div class="row">
         <div class="col">
-            <div class="card">
-                <div class="card-body">
-                    <h1 class="text-center text-success">
-                        Tutti i progetti
-                    </h1>
+            <div>
+                <button href="{{ route('admin.projects.create') }}" class="add-button mb-5">
+                    <i class="fa-solid fa-plus"></i>
+                </button>
 
-                    <div>
-                        <a href="{{ route('admin.projects.create') }}" class="btn btn btn-success w-100">
-                            Aggiungi
-                        </a>
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Title</th>
-                                    <th scope="col">Slug</th>
-                                    <th scope="col">Content</th>
-                                    <th scope="col">Status</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($projects as $project)
-                                    <tr>
-                                        <th scope="row">{{ $project->id }}</th>
-                                        <td>{{ $project->title }}</td>
-                                        <td>{{ $project->slug }}</td>
-                                        <td>{{ $project->content }}</td>
-                                        <td>{{ $project->status }}</td>
-                                        <td>
-                                            <a href="{{ route('admin.projects.show', ['project' => $project->slug]) }}" class="btn btn-xs btn-primary mb-2">
-                                                Mostra
-                                            </a>
-                                            <a href="{{ route('admin.projects.edit', ['project' => $project->slug]) }}" class="btn btn-warning mb-2">
-                                                Modifica
-                                            </a>
+                <div class="row">
+                    @foreach ($projects as $project)
+                        <div class="col-12 col-xs-6 col-sm-4 col-md-3 mb-3">
+                            <div class="my-card">
+                                <div class="my-card-body d-flex flex-column justify-content-between h-100">
+                                    <h3 class="text-center">
+                                        {{ $project->title }}
+                                    </h3>
 
-                                            <form
-                                            onsubmit="return confirm('Sicuro di voler eliminare questo elemento ? ...')"
-                                            action="{{ route('admin.projects.destroy', ['project' => $project->slug]) }}"
-                                            method="POST"
-                                            class="d-inline-block">
+                                    <p>
+                                        {{ $project->content }}
+                                    </p>
 
-                                            @csrf
-                                            @method('DELETE')
+                                    <button href="{{ route('admin.projects.show', ['project' => $project->slug]) }}" class="show-button align-self-baseline">
+                                        Mostra
+                                    </button>
 
-                                            <button type="submit" class="btn btn-danger">
-                                                Elimina
-                                            </button>
-                                            
-                                            </form>
-                                        </td>
-                                    </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                    </div>
+                                    <div class="edit-buttons-container d-flex flex-column align-items-end">
+                                        <a href="{{ route('admin.projects.edit', ['project' => $project->slug]) }}" class="edit-button mb-2">
+                                            <i class="fa-solid fa-pencil"></i>
+                                        </a>
+                                        <form
+                                        onsubmit="return confirm('Sicuro di voler eliminare questo elemento ? ...')"
+                                        action="{{ route('admin.projects.destroy', ['project' => $project->slug]) }}"
+                                        method="POST"
+                                        class="d-inline-block">
+
+                                        @csrf
+                                        @method('DELETE')
+
+                                        <button type="submit" class="erase-button">
+                                            <i class="fa-solid fa-eraser"></i>
+                                        </button>
+                                        
+                                        </form>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>
