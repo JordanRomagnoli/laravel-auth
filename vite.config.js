@@ -9,6 +9,7 @@ export default defineConfig({
             input: [
                 'resources/scss/partials/header.scss',
                 'resources/scss/partials/admin-index.scss',
+                'resources/scss/partials/admin-show.scss',
                 'resources/scss/app.scss',
                 'resources/js/app.js',
             ],

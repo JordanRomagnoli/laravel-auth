@@ -6,7 +6,7 @@
     text-align: end;
 
         .add-button {
-            background-color: rgb(4, 176, 4);
+            background-color: #046A4E;
             color: white;
             text-decoration: none;
             font-size: 24px;
@@ -17,7 +17,7 @@
         }
 
         .add-button:hover {
-            background-color: rgb(0, 91, 0);
+            background-color: rgb(2, 201, 2);
             transition: background-color 0.5s ;
         }
    } 
@@ -38,7 +38,7 @@
                 background-color: #001f3f;
                 text-decoration: none;
                 padding: 8px 12px;
-                border-radius: 10%;
+                border-radius: 5px;
                 border-width: 0;
                 color: white;
             }
