@@ -52,10 +52,10 @@
         </header>
 
         <section id="guest">        
-                <main class="py-4">
-                    <div class="container">
-                        @yield('main-content')
-                    </div>
+                <main>
+                    
+                    @yield('main-content')
+                    
                 </main>
         </section>
     </body>
