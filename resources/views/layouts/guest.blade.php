@@ -11,6 +11,7 @@
         @vite('resources/js/app.js')
     </head>
     <body>
+        
         <header>
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
                 <div class="container">
@@ -55,10 +56,12 @@
             </nav>
         </header>
 
-        <main class="py-4">
-            <div class="container">
-                @yield('main-content')
-            </div>
-        </main>
+        <section id="guest">        
+                <main class="py-4">
+                    <div class="container">
+                        @yield('main-content')
+                    </div>
+                </main>
+        </section>
     </body>
 </html>
