@@ -3,6 +3,7 @@
 @section('page-title', 'Tutti i progetti')
 
 @section('main-content')
+<section id="index-admin">
     <div class="row">
         <div class="col">
             <div class="card">
@@ -65,4 +66,5 @@
             </div>
         </div>
     </div>
+</section>
 @endsection
