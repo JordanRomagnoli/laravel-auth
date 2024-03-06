@@ -7,11 +7,14 @@
         <div class="col">
             <div class="card">
                 <div class="card-body">
-                    <h1 class="text-center text-success">
-                        Sei loggato!
-                    </h1>
-                    <br>
-                    La dashboard è una pagina privata (protetta dal middleware)
+                    @if ($stringaSalutaUtente != null)
+                        <h1 class="text-center text-success">
+                            {{ $stringaSalutaUtente }}
+                            <span>
+                                Sei loggato!
+                            </span>
+                        </h1>
+                    @endif
                 </div>
             </div>
         </div>

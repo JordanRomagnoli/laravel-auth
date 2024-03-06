@@ -1,0 +1,15 @@
+#show-guest {
+    .my-show-card {
+        max-width: 1200px;
+        border: 1px solid black;
+        padding: 24px;
+        border-radius: 10px;
+        box-shadow: 7px -7px 4px 0px #8c8c8c;
+
+            .my-show-card-body {
+                span {
+                    margin-left: 5px;
+                }
+            }
+    }
+}

@@ -1,0 +1,15 @@
+#admin-show {
+    .my-card {
+
+        max-width: 1200px;
+        border: 1px solid black;
+        padding: 24px;
+        border-radius: 10px;
+        box-shadow: 7px -7px 4px 0px #8c8c8c;
+            .my-card-body {
+                span {
+                    margin-left: 5px;
+                }
+            }
+    }
+}
