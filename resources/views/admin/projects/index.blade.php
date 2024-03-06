@@ -34,12 +34,27 @@
                                         <td>{{ $project->content }}</td>
                                         <td>{{ $project->status }}</td>
                                         <td>
-                                            <a href="{{ route('admin.projects.show', ['project' => $project->slug]) }}" class="btn btn-xs btn-primary">
+                                            <a href="{{ route('admin.projects.show', ['project' => $project->slug]) }}" class="btn btn-xs btn-primary mb-2">
                                                 Mostra
                                             </a>
                                             <a href="{{ route('admin.projects.edit', ['project' => $project->slug]) }}" class="btn btn-warning mb-2">
                                                 Modifica
                                             </a>
+
+                                            <form
+                                            onsubmit="return confirm('Sicuro di voler eliminare questo elemento ? ...')"
+                                            action="{{ route('admin.projects.destroy', ['project' => $project->slug]) }}"
+                                            method="POST"
+                                            class="d-inline-block">
+
+                                            @csrf
+                                            @method('DELETE')
+
+                                            <button type="submit" class="btn btn-danger">
+                                                Elimina
+                                            </button>
+                                            
+                                            </form>
                                         </td>
                                     </tr>
                                 @endforeach
