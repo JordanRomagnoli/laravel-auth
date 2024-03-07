@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.guest')
 
 @section('page-title', '{{ $project->title }}')
 
@@ -6,8 +6,8 @@
 <section id="show-guest">
     <div class="row">
         <div class="col d-flex justify-content-center">
-            <div class="my-show-card">
-                <div class="my-show-card-body">
+            <div class="my-card">
+                <div class="my-card-body">
                     <h1 class="text-center mb-5">
                         {{ $project->title }}
                     </h1>
@@ -27,6 +27,20 @@
                             {{ $project->created_at->format('H:i')  }}
                         </span>
                     </div>
+
+                    @if ($project['updated_at'] != $project['created_at'])
+                        <div>
+                            Modificato il: 
+                            <span>
+                                {{ $project->updated_at->format('d/m/Y') }}
+                            </span>
+                            <br>
+                            Alle: 
+                            <span>
+                                {{ $project->updated_at->format('H:i')  }}
+                            </span>
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>
