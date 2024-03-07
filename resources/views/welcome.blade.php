@@ -1,17 +1,25 @@
 @extends('layouts.guest')
 
 @section('main-content')
-    <div class="row">
-        <div class="col">
-            <div class="card">
-                <div class="card-body">
-                    <h1 class="text-center text-primary">
-                        Welcome!
-                    </h1>
-                    <br>
-                    La welcome page è una pagina pubblica (NON protetta)
+    <section id="welcome">
+        <div class="container">
+            <h1>
+                Benvenuti nel <span>nostro</span> portfolio !
+            </h1>
+
+            <div class="frame">
+                <div class="row">
+                    <div class="col-4 rounded-start-4 ">
+
+                    </div>
+                    <div class="col-4 border-end-0 border-start-0 ">
+
+                    </div>
+                    <div class="col-4 rounded-end-4">
+
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 @endsection

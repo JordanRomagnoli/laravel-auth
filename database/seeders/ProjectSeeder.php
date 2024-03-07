@@ -25,7 +25,7 @@ class ProjectSeeder extends Seeder
             $slugForMassAssignment = Str::slug($titleForMassAssignment);
             $postWithMassAssignment = Project::create([
                 'title' => $titleForMassAssignment,
-                'slug' => $slugForMassAssignment,
+                'slug' => $slugForMassAssignment->default(' '),
                 'content' => fake()->paragraph(),
                 'status' => fake()->boolean(),
             ]);

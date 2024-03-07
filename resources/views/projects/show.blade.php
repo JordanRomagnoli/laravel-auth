@@ -1,9 +1,9 @@
-@extends('layouts.app')
+@extends('layouts.guest')
 
-@section('page-title', $project->title)
+@section('page-title', '{{ $project->title }}')
 
 @section('main-content')
-<section id="admin-show">
+<section id="show-guest">
     <div class="row">
         <div class="col d-flex justify-content-center">
             <div class="my-card">
@@ -46,4 +46,5 @@
         </div>
     </div>
 </section>
+    
 @endsection
