@@ -17,7 +17,7 @@ class MainController extends Controller
 
         if (Auth::check()) {
             $user = Auth::user();
-            $stringaSalutaUtente = 'Benvenuto '.$user->name;
+            $stringaSalutaUtente = $user->name;
         }
 
         return view('admin.dashboard', compact('stringaSalutaUtente'));
