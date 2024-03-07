@@ -3,17 +3,18 @@
 @section('page-title', 'Dashboard')
 
 @section('main-content')
-    <div class="row">
-        <div class="col">
-            <div class="card">
-                <div class="card-body">
-                    <h1 class="text-center text-success">
-                        Sei loggato!
+    <section id="dashboard">
+        <div class="row">
+            <div class="col-12 text-center">
+                
+                @if ($stringaSalutaUtente != null)
+                    <h1>
+                        Benvenuto
+                        <span>{{ $stringaSalutaUtente }}</span> !
                     </h1>
-                    <br>
-                    La dashboard è una pagina privata (protetta dal middleware)
-                </div>
+                @endif
+                    
             </div>
         </div>
-    </div>
+    </section>
 @endsection

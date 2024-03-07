@@ -19,7 +19,6 @@
                 <ul class="">
                     <li>
                         <a href="/">Home</a>
-                        <a href="{{ route('projects.index') }}">I nostri progetti</a>
 
                         @auth
                             <li class="nav-item">
@@ -28,6 +27,7 @@
                         @else
                             <li>
 
+                                <a href="{{ route('projects.index') }}">I nostri progetti</a>
                                 <a href="{{ route('login') }}">Login</a>
                                 <a href="{{ route('register') }}">Register</a>
 
@@ -52,10 +52,10 @@
         </header>
 
         <section id="guest">        
-                <main class="py-4">
-                    <div class="container">
-                        @yield('main-content')
-                    </div>
+                <main>
+                    
+                    @yield('main-content')
+                    
                 </main>
         </section>
     </body>
